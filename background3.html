@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<!--THIS PAGE USES THE "PLANE" TAG FOR A FLAT PLANE WITH A VIDEO TEXTURE OVERLAYED-->
+<!--THIS PAGE USES THE "VIDEOSPHERE" TAG FOR A 360 VIDEO SPHERE-->
 
 <html>
 
@@ -19,7 +19,7 @@
 <!-- Creates -->
 <a-scene background="color: #ECECEC">
   <a-box position="-1 0.5 -3" rotation="0 45 0" shadow material="src: #webcam"></a-box>
-  <a-plane src="#webcam" height="100" width="100" rotation="0 0 0" position="0 0 -10"></a-plane>
+  <a-videosphere src="#webcam" ></a-videosphere>
   <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
   <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
   <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
@@ -29,7 +29,8 @@
 <script>
   // You can also set which camera to use (front/back/etc)
   // @SEE https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-  var back = false;
+
+var back = false;
 
   navigator.mediaDevices.getUserMedia({audio: false, video: { facingMode: (back? "user" : "environment") }})
   .then(stream => {
