@@ -1,0 +1,71 @@
+ <!doctype html>
+<html>
+<head>
+  <title>
+    tic tac toe
+  </title>
+  <link href="alphabetapruning.css" rel="stylesheet" type="text/css"/>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="alphabetapruning.js"></script>
+</head>
+<body>
+    <h1>Alpha Beta Pruning</h1>
+  <div id="toggleContainer" class="toggleContainer">
+    <p id="sideSelectorTitle"></p>
+    <div>
+        <p class="eachSide" id="eksToggleTitle"></p>
+        <label class="switch">
+          <input id="playerSelect" class="playerSelect" type="checkbox"/>
+          
+        </label>
+        <p class="eachSide" id="oohToggleTitle"></p>
+    </div>
+    <div id="resetContainer">
+      <button id="resetButton" class="resetButton"></button>
+    </div>
+  </div>
+
+  <div class="gameframe" id="gameframe">
+    <div class="lines" id="lines">
+      <div class="horizontal" id="horizontal">
+        <hr class="lineProp" id="hl1"/>
+        <hr class="lineProp" id="hl2" />
+      </div>
+      <div class="vertical" id="vertical">
+        <hr class="lineProp" id="vl1" />
+        <hr class="lineProp" id="vl2" />
+      </div>
+    </div>
+    <div class="listener">
+      <div class="eachListener free" id="one" title="0">
+
+      </div>
+      <div class="eachListener free" id="two" title="1">
+
+      </div>
+      <div class="eachListener free" id="three" title="2">
+
+      </div>
+      <div class="eachListener free" id="four" title="3">
+
+      </div>
+      <div class="eachListener free" id="five" title="4">
+
+      </div>
+      <div class="eachListener free" id="six" title="5">
+
+      </div>
+      <div class="eachListener free" id="seven" title="6">
+
+      </div>
+      <div class="eachListener free" id="eight" title="7">
+
+      </div>
+      <div class="eachListener free" id="nine" title="8">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
