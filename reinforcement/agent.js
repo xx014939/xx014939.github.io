@@ -1,8 +1,8 @@
 class Agent{
 
     constructor(name, eps=0.05, alpha=0.5) {
-      this.eps = eps; // probability of choosing random action instead of greedy
-      this.alpha = alpha; // learning rate
+      this.eps = eps; // eps = likelihood of random action instead of greedy
+      this.alpha = alpha; // alpha = learning rate
       this.state_history = [];
       this.name = name;
       this.V = [];
@@ -83,7 +83,7 @@ class Agent{
         let prev = this.state_history[i];
         let value = this.V[prev] + this.alpha*(target - this.V[prev]);
         this.V[prev] = value;
-        // console.log(this.name, prev, this.V[prev]);
+        
         target = this.copy_obj(value);
       }
       this.reset_history();

@@ -30,7 +30,7 @@ async function play_game(p1, p2, show_ui=true, simulation=false){
   for(let i=0;i<9;i++){
     let action = current_agent.take_action(environment);
 
-    // console.log(current_agent.name, action, environment.get_state());
+    
     environment.grid_select(action, show_ui);
 
     p1.update_state_history(environment.get_state());
@@ -164,12 +164,12 @@ function human_player_move(i){
 function get_state_hash_and_winner(env, i=0, j=0){
   let results = [];
 
-  let options = [0,-1,1];//[0, 1, -1];
+  let options = [0,-1,1];
 
   for (var vi=0; vi<options.length; vi++) {
     let v = options[vi];
     env.set_cell(i, j, v);
-    // console.log(i, j, v, env.board);
+    
 
     if (j == 2){
       if (i == 2){
@@ -188,7 +188,7 @@ function get_state_hash_and_winner(env, i=0, j=0){
 
   }
   return results;
-  // env.reset_game();
+  
 }
 
 function initial_values(env, state_winner_triples, p1, p2){
@@ -221,7 +221,7 @@ function initial_values(env, state_winner_triples, p1, p2){
     V1[state] = v1;
     V2[state] = v2;
   }
-  // console.log('initialV',counter);
+  
   return [V1,V2]
 }
 
