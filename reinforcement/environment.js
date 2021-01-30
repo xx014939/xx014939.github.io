@@ -20,7 +20,7 @@ class Environment{
     }
   
     set_cell(i, j, value){
-      // console.log(i, j, value);
+   
       this.board[(j*this.board_length)+i] = parseInt(value);
     }
   
@@ -49,7 +49,7 @@ class Environment{
   
       if(this.is_game_over()){
         this.ended = true;
-        // console.log('game ended, winner ', this.winner)
+    
   
       }else{
         this.player_turn = this.player_turn * -1;
@@ -59,17 +59,13 @@ class Environment{
   
     reset_game(reset_player=true, show_ui=true){
       this.winner = 0;
-      // this.board = [];
+     
   
       for(let i=0;i<Math.pow(this.board_length,2);i++){
-        // this.board.push(0);
+       
         if(show_ui){
           let thisid = "#btn_ttt_click"+i.toString();
-          // if(this.board[i] == 1){
-          //   $(thisid).toggleClass('red white');
-          // }else if(this.board[i] == -1){
-          //   $(thisid).toggleClass('green white');
-          // }
+        
           $(thisid).removeClass("green");
           $(thisid).removeClass("red");
           $(thisid).addClass("white");
@@ -114,7 +110,6 @@ class Environment{
           hashnum += Math.pow(3,k) * v;
           k++;
   
-          // console.log(i, j, this.get_cell(i,j), v, h, k)
         }
       }
       return hashnum;
