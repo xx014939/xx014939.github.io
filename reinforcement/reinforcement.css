@@ -45,6 +45,13 @@
     border-radius: 15px;
     box-shadow: 0 9px #999;
   }
+
+  @media only screen and (max-width: 800px) {
+    .buttonHome {
+      font-size: 14px;
+      
+      padding: 10px 17.5px;
+    }
   
   .buttonHome:hover {background-color: #346dd6;}
   
