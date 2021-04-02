@@ -78,7 +78,7 @@ let board = [
   }
   
   function draw() {
-    background(255);
+    background(255, 204, 0);
     strokeWeight(4);
   
     line(w, 0, w, height);
