@@ -1,12 +1,14 @@
 .main-title{
   text-align: center; 
   font-size: 50px;
-  transition: 1s;
+  transition: 1.5s;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .main-title:hover{
   transform: rotateX(360deg);
-  transition: 1s;
+  transition: 0.9s;
   color: pink;
 }
 
