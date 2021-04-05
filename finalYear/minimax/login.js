@@ -34,4 +34,9 @@ function login(){
     
 }
 
+function logout() {
+    firebase.auth().signOut();
+}
+
 document.getElementById("loginButton").onclick = function() {login()};
+document.getElementById("logoutButton").onclick = function() {logout()};
