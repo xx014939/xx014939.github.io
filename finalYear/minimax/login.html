@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>LOGIN</title>
+</head>
+<body>
+
+    <div class="login-form" id="loginDiv">
+        <h3>LOGIN OVER HERE</h3>
+        <input type="email" placeholder="Email..." id="email-field">
+        <input type="password" placeholder="Password..." id="password-field">
+
+        <button onclick="login()">LOGIN</button>
+    </div>
+
+    <div class="logged-in" id="userDiv">
+        <p>I should appear when you are logged in</p>
+    </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDkaGv4jZoNfCHVCxD1j4gyPxdomeYTSkU",
+    authDomain: "web-login-fyp.firebaseapp.com",
+    projectId: "web-login-fyp",
+    storageBucket: "web-login-fyp.appspot.com",
+    messagingSenderId: "703900213638",
+    appId: "1:703900213638:web:57cb496955e8bc54e98c07",
+    measurementId: "G-3DL39KQHCL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="login.js"></script>
+
+</body>
+</html>
