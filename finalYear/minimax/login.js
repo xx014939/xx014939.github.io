@@ -1,5 +1,4 @@
-import * as firebase from 'firebase';
-require('firebase/auth')
+
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
