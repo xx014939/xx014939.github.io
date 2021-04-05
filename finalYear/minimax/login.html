@@ -2,15 +2,40 @@
 <head>
     <title>LOGIN</title>
     <link rel="stylesheet" type="text/css" href="login.css" media="screen"/>
+    <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
+    <link rel="stylesheet" type="text/css" href="login2.css" media="screen"/>
 </head>
 <body>
 
     <div class="loginForm" id="loginDiv">
         
-        <input class="inputBox" type="email" placeholder="Email..." id="email-field">
-        <input class="inputBox" type="password" placeholder="Password..." id="password-field">
+       
+    <div class="wrapper">
+        <div class="container">
+            <h1>Student ID: 27014939</h1>
+            <h1>Welcome to my FYP</h1>
+            
+            <form class="form">
+                <input type="email" placeholder="Email" id="email-field">
+                <input type="password" placeholder="Password" id="password-field">
+                <button type="submit" id="loginButton" onclick="login()">Login Test</button>
+            </form>
+        </div>
+        
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 
-        <button id="loginButton" class="loginButton" onclick="login()">LOGIN</button>
     </div>
 
     <div class="logged-in" id="userDiv">
