@@ -1,5 +1,3 @@
-
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in 1.
@@ -38,5 +36,5 @@ function logout() {
     firebase.auth().signOut();
 }
 
-document.getElementById("login-button").onclick = function() {login()};
+document.getElementById("loginButton").onclick = function() {login()};
 document.getElementById("logoutButton").onclick = function() {logout()};
