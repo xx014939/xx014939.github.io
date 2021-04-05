@@ -78,12 +78,12 @@ body :-ms-input-placeholder {
   transition-timing-function: ease-in-put;
   font-weight: 200;
 }
-form {
+.login-form {
   padding: 20px 0;
   position: relative;
   z-index: 2;
 }
-form input {
+.login-form input {
   appearance: none;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -99,15 +99,15 @@ form input {
   transition-duration: 0.25s;
   font-weight: 300;
 }
-form input:hover {
+.login-form input:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-form input:focus {
+.login-form input:focus {
   background-color: white;
   width: 300px;
   color: #53e3a6;
 }
-form button {
+.login-form button {
   appearance: none;
   outline: 0;
   background-color: white;
@@ -120,7 +120,7 @@ form button {
   font-size: 18px;
   transition-duration: 0.25s;
 }
-form button:hover {
+.login-form button:hover {
   background-color: #f5f7f9;
 }
 .bg-bubbles {
