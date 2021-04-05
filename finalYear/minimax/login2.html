@@ -1,24 +1,38 @@
-<html>
 <head>
-    <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="login.css" media="screen"/>
+    <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" type="text/css" href="login2.css" media="screen"/>
 </head>
+
 <body>
 
-    <div class="loginForm" id="loginDiv">
+    <div class="wrapper">
+        <div class="container">
+            <h1>Welcome</h1>
+            
+            <form class="form">
+                <input type="email" placeholder="Email" id="email-field">
+                <input type="password" placeholder="Password" id="password-field">
+                <button type="submit" id="login-button" onclick="login()">Login</button>
+            </form>
+        </div>
         
-        <input class="inputBox" type="email" placeholder="Email..." id="email-field">
-        <input class="inputBox" type="password" placeholder="Password..." id="password-field">
-
-        <button id="loginButton" class="loginButton" onclick="login()">LOGIN</button>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+    
 
-    <div class="logged-in" id="userDiv">
-        <p>I should appear when you are logged in</p>
-        <button id="logoutButton" >LOGOUT</button>
-    </div>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use1
@@ -45,7 +59,5 @@
   firebase.analytics();
 </script>
 
-<script src="login.js"></script>
-
 </body>
-</html>
+
