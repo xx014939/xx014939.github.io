@@ -33,3 +33,5 @@ function login(){
   });
     
 }
+
+document.getElementById("loginButton").onclick = function() {login()};
