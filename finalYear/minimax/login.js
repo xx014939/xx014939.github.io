@@ -21,6 +21,7 @@ function login(){
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    window.location.href = "https://xx014939.github.io/finalYear/minimax/home";
     // ...
   })
   .catch((error) => {
