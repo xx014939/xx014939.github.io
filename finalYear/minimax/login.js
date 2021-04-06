@@ -1,6 +1,3 @@
-var email = document.getElementById("email-field").value;
-var password = document.getElementById("password-field").value;
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in 1.
@@ -39,7 +36,12 @@ function logout() {
     firebase.auth().signOut();
 }
 
-firebase.auth().createUserWithEmailAndPassword(email, password)
+function register() {
+
+  var email = document.getElementById("email-field").value;
+  var password = document.getElementById("password-field").value;
+  
+  firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
@@ -52,7 +54,11 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
   });
 
 
+}
+
+
+
 document.getElementById("loginButton").onclick = function() {login()};
 document.getElementById("logoutButton").onclick = function() {logout()};
 
-document.getElementById("registerButton").onclick = function() {createUserWithEmailAndPassword(document.getElementById("email-field").value, document.getElementById("password-field").value)};
+document.getElementById("registerButton").onclick = function() {register()};
