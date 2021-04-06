@@ -1,3 +1,6 @@
+var email = document.getElementById("email-field").value;
+var password = document.getElementById("password-field").value;
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in 1.
