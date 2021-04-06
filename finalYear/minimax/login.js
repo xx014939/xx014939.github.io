@@ -36,5 +36,20 @@ function logout() {
     firebase.auth().signOut();
 }
 
+firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+
+
 document.getElementById("loginButton").onclick = function() {login()};
 document.getElementById("logoutButton").onclick = function() {logout()};
+
+document.getElementById("registerButton").onclick = function() {createUserWithEmailAndPassword(document.getElementById("email-field").value, document.getElementById("password-field").value)};
