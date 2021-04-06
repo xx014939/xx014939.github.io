@@ -17,7 +17,7 @@
     <title>Naail's Project</title>
   </head>
   <body class="body">
-    <div class="userDiv">
+   
     <h1 class="main-title">Naail's Final Year Project</h1>
    
     <div class="purpose">
@@ -95,7 +95,7 @@
   </div>
 </div>
 
-</div>
+
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
@@ -125,12 +125,17 @@
 </script>
 
 <script>
-  if(!user) {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in 1.
+      
+    } else {
+      if(!user) {
     window.location = 'login.html'; //If User is not logged in, redirect to login page
   }
+    }
+  });
 </script>
-
-<script src="login.js"></script>
 
   </body>
 </html>
