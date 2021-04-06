@@ -10,7 +10,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <link rel="stylesheet" type="text/css" href="homepage.css" media="screen"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="login.js"></script>
+    
     <link rel="apple-touch-icon" href="logo192.png" />
    
    
@@ -123,6 +123,14 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+
+<script>
+  if(!user) {
+    window.location = 'login.html'; //If User is not logged in, redirect to login page
+  }
+</script>
+
+<script src="login.js"></script>
 
   </body>
 </html>
