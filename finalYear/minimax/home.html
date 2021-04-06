@@ -128,10 +128,12 @@
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in 1.
+      document.getElementById("body").style.display = "block"
       
     } else {
       if(!user) {
-    window.location = 'login.html'; //If User is not logged in, redirect to login page
+        document.getElementById("body").style.display = "none"
+        window.location = 'login.html'; //If User is not logged in, redirect to login page
   }
     }
   });
