@@ -143,6 +143,7 @@
     border: none;
     
     
+    
   }
   
   .buttonHome:hover {background-color: #346dd6;}
@@ -345,7 +346,8 @@ html, body {
   }
 
   .connect4Container {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     align-content: center;
     align-items: center;
