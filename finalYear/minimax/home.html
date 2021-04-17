@@ -169,11 +169,6 @@
 
 <script>
 
-  var firstTime = new Boolean(true);
-
-  var questionMark = document.getElementById('questionMark');
-  var dbRef = firebase.database().ref().child("game");
-
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -187,13 +182,19 @@
     }
   });
 
+  var questionMark = document.getElementById('questionMark');
+  var questionMark2 = document.getElementById('questionMark2');
+  var questionMark3 = document.getElementById('questionMark3');
+  var db = firebase.database();
+
+
+  db.ref('game/0/game1').set('?').on('value', snap => questionMark.innerText = snap.val());
+  db.ref('game/0/game2').set('?').on('value', snap => questionMark.innerText = snap.val());
+  db.ref('game/0/game3').set('?').on('value', snap => questionMark.innerText = snap.val());
  
 
   function userInteraction() {
-   dbRef.update({game1: "Played"});
-   questionMark.innerText = " ";
-   firstTime = false;
-   console.log(firstTime);
+    db.ref('game/0/game1').set(' ').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction();
