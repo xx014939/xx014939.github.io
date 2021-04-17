@@ -44,7 +44,7 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1 class="question-mark" id="questionMark"></h1>
+          <h1 class="question-mark" id="questionMark">?</h1>
         </div>
         <div class="flip-card-back">
           <h4><u><b>Algorithm Type:</u> Minimax Algorithm</b></h4>
@@ -62,7 +62,7 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <h1 class="question-mark" id="questionMark2"></h1>
+        <h1 class="question-mark" id="questionMark2">?</h1>
       </div>
       <div class="flip-card-back">
         <h4><u><b>Algorithm Type:</u> Minimax With Alpha Beta Pruning</b></h4>
@@ -80,7 +80,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <h1 class="question-mark" id="questionMark3"></h1>
+      <h1 class="question-mark" id="questionMark3">?</h1>
     </div>
     <div class="flip-card-back">
       <h4><u><b>Algorithm Type:</u> Reinforcement Learning </b></h4>
@@ -169,26 +169,26 @@
 
 <script>
 
-  var firstTime = new Boolean(true)
+  //var firstTime = new Boolean(true)
 
   var questionMark = document.getElementById('questionMark');
   var dbRef = firebase.database().ref().child("game");
 
-  function initialValue(){
-  if (firstTime === true){
-    questionMark.innerText = "?";
-    questionMark2.innerText = "?";
-    questionMark3.innerText = "?";
-    }
-  }
+  // function initialValue(){
+  // if (firstTime === true){
+  //   questionMark.innerText = "?";
+  //   questionMark2.innerText = "?";
+  //   questionMark3.innerText = "?";
+  //   }
+  // }
 
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       document.getElementById("body").style.display = "block";
-      initialValue();
-      firstTime = false;
+      //initialValue();
+      //firstTime = false;
       
     } else {
       if(!user) {
