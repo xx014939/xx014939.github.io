@@ -44,14 +44,14 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1 class="question-mark" id="questionMark">?</h1>
+          <h1 class="question-mark" id="questionMark"></h1>
         </div>
         <div class="flip-card-back">
           <h4><u><b>Algorithm Type:</u> Minimax Algorithm</b></h4>
             <p>Original Minimax algorithm, implemented on a game of tic tac toe<br>     </p>
           <div class="container">
             <div >
-              <a href="minimax-explanation.html"><button onclick="trackInteraction()" class="buttonHome">Find Out More</button></a>
+              <a href="minimax-explanation.html"><button onclick="userInteraction()" class="buttonHome">Find Out More</button></a>
             </div>
         </div>
       </div>
@@ -62,14 +62,14 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <h1 class="question-mark" >?</h1>
+        <h1 class="question-mark" ></h1>
       </div>
       <div class="flip-card-back">
         <h4><u><b>Algorithm Type:</u> Minimax With Alpha Beta Pruning</b></h4>
         <p>This is an improvement upon the original Minimax algorithm. Alpha Beta pruning is used to reduce computation time.</p>
       <div class="container">
         <div >
-          <a href="alphabeta-explanation.html"><button class="buttonHome">Find Out More</button></a>
+          <a href="alphabeta-explanation.html"><button class="buttonHome" onclick="userInteraction2()">Find Out More</button></a>
          </div>
 
       </div>
@@ -80,14 +80,14 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <h1 class="question-mark" >?</h1>
+      <h1 class="question-mark" ></h1>
     </div>
     <div class="flip-card-back">
       <h4><u><b>Algorithm Type:</u> Reinforcement Learning </b></h4>
         <p>Reinforcement learning tic tac toe game with user interaction </p>
       <div class="container">
         <div >
-          <a href="https://xx014939.github.io/reinforcement/index.html"><button class="buttonHome">Find Out More</button></a>
+          <a href="https://xx014939.github.io/reinforcement/index.html"><button class="buttonHome" onclick="userInteraction3()">Find Out More</button></a>
          </div>
         </div>
       </div>
@@ -182,10 +182,12 @@
   });
 
   var questionMark = document.getElementById('questionMark');
-  var dbRef = firebase.database().ref().child("game1");
+  var dbRef = firebase.database().ref().child("game");
 
   function initialValue(){
   questionMark.innerText = "?";
+  questionMark2.innerText = "?";
+  questionMark3.innerText = "?";
 
   }
 
@@ -196,21 +198,21 @@
    questionMark.innerText = " ";
   }
 
-  userInteraction();
+  //userInteraction();
 
   function userInteraction2() {
    dbRef.update({game2: "Played"});
-   questionMark.innerText = " ";
+   questionMark2.innerText = " ";
   }
 
-  userInteraction2()
+  //userInteraction2()
 
   function userInteraction3() {
    dbRef.update({game3: "Played"});
-   questionMark.innerText = " ";
+   questionMark3.innerText = " ";
   }
 
-  userInteraction3()
+  //userInteraction3()
 
 </script>
 
