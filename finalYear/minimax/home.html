@@ -192,8 +192,8 @@
   initialValue();
 
   function userInteraction() {
-   dbRef.update({game1: "56"});
-   dbRef.child("game1").on('value', snap => questionMark.innerText = snap.val());
+   dbRef.update({game1: "Played"});
+   questionMark.innerText = "";
   }
 
   userInteraction();
