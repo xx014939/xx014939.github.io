@@ -148,6 +148,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -180,12 +181,11 @@
     }
   });
 
-</script>
+  var questionMark = document.getElementById('questionMark');
+  var dbRef = firebase.database().ref().child("game1");
+  dbRef.on('value', snap => questionMark.innerText = snap.val());
 
-<script>
-  trackInteraction = () => {
-    document.getElementById("questionMark").style.display = "none";
-  }
+
 </script>
 
 
