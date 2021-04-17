@@ -181,9 +181,15 @@
     }
   });
 
-  var questionMark = document.getElementById('questionMark');
+  function initialValue(){
+    var questionMark = document.getElementById('questionMark');
   var dbRef = firebase.database().ref().child("game1");
   dbRef.on('value', snap => questionMark.innerText = snap.val());
+
+
+  }
+
+  initialValue();
 
   function userInteraction() {
    dbRef.update({game1: "56"});
