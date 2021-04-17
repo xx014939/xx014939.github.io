@@ -182,7 +182,7 @@
   });
 
   var questionMark = document.getElementById('questionMark');
-  var dbRef = firebase.database().ref().child('game1').child('value');
+  var dbRef = firebase.database().ref().parent('game1');
   dbRef.on('value', snap => questionMark.innerText = snap.val());
 
   function userInteraction() {
