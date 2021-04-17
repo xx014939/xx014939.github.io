@@ -182,11 +182,12 @@
   });
 
   var questionMark = document.getElementById('questionMark');
-  var dbRef = firebase.database().ref().parent('game1');
+  var dbRef = firebase.database().ref().child("game1");
   dbRef.on('value', snap => questionMark.innerText = snap.val());
 
   function userInteraction() {
-   dbRef.set({value: "56"})
+   dbRef.set({value: "56"});
+   firebase.database().ref().child("value").on('value', snap => questionMark.innerText = snap.val());
   }
 
   userInteraction();
