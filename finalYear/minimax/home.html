@@ -185,7 +185,7 @@
   var dbRef = firebase.database().ref().child("game1");
 
   function initialValue(){
-  dbRef.on('value', snap => questionMark.innerText = snap.val());
+  questionMark.innerText = "?";
 
   }
 
@@ -193,11 +193,24 @@
 
   function userInteraction() {
    dbRef.update({game1: "Played"});
-   questionMark.innerText = "";
+   questionMark.innerText = " ";
   }
 
   userInteraction();
 
+  function userInteraction2() {
+   dbRef.update({game2: "Played"});
+   questionMark.innerText = " ";
+  }
+
+  userInteraction2()
+
+  function userInteraction3() {
+   dbRef.update({game3: "Played"});
+   questionMark.innerText = " ";
+  }
+
+  userInteraction3()
 
 </script>
 
