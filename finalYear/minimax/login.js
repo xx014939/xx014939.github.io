@@ -54,8 +54,12 @@ function register() {
     // ..
   });
 
+userCurrent = FirebaseAuth.getInstance().getCurrentUser();
+userCurrent.sendEmailVerification();
+
 
 }
+
 
 
 
