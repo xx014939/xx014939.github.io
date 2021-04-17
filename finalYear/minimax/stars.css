@@ -8,6 +8,13 @@ body {
   background: #19181a;
    }
 
+   @media (min-width: 800px){
+     .background{
+      min-height: 1300px;
+     }
+     
+   }
+
 .background span {
   width: 20vmin;
   height: 20vmin;

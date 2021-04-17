@@ -1,5 +1,8 @@
 img{
-    transition: transform 1s;}
+    transition: transform 1s;
+    width: 100%;
+    max-width: 500px;
+}
 
 img:hover{
     transform: scale(1.2);
