@@ -182,12 +182,12 @@
     }
   }
 
-  initialValue();
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.getElementById("body").style.display = "block"
+      document.getElementById("body").style.display = "block";
+      initialValue();
       firstTime = false;
       
     } else {
