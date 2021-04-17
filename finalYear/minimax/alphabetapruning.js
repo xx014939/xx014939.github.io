@@ -273,19 +273,20 @@ var AI = function() {
         game.advanceTo(next);
     }
     function minimax(state, alp, bet) {
-        var alpha = alp;
-        var beta = bet;
+        var alpha = alp; // Alpha
+        var beta = bet; // Beta
         if (state.terminalCheck()) {
             return Game.score(state);
         }
         else {
+            // Initial scores (similar to Maximiser and Minimiser)
             var stateScore;
             if(state.player === "X") {
-                stateScore = -1000;
+                stateScore = -Infinity; 
             }
             else {
 
-                stateScore = 1000;
+                stateScore = +Infinity;
             }
             var spaces = state.emptySpaces();
             var nextMoves = spaces.map(function(pos) {
@@ -294,8 +295,8 @@ var AI = function() {
                 return nextState;
             });
             nextMoves.forEach(function(nextState){
-                if (state.player === "X") {
-                    if (alpha > beta) {
+                if (state.player === "X") { // If the player is X (not O)
+                    if (alpha > beta) { 
                         return beta;
                     }
                     else {
