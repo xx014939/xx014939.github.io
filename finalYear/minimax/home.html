@@ -44,14 +44,14 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1 class="question-mark">?</h1>
+          <h1 class="question-mark" id="questionMark">?</h1>
         </div>
         <div class="flip-card-back">
           <h4><u><b>Algorithm Type:</u> Minimax Algorithm</b></h4>
             <p>Original Minimax algorithm, implemented on a game of tic tac toe<br>     </p>
           <div class="container">
             <div >
-              <a href="minimax-explanation.html"><button class="buttonHome">Find Out More</button></a>
+              <a href="minimax-explanation.html"><button onclick="trackInteraction()" class="buttonHome">Find Out More</button></a>
             </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <h1 class="question-mark">?</h1>
+        <h1 class="question-mark" >?</h1>
       </div>
       <div class="flip-card-back">
         <h4><u><b>Algorithm Type:</u> Minimax With Alpha Beta Pruning</b></h4>
@@ -80,7 +80,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <h1 class="question-mark">?</h1>
+      <h1 class="question-mark" >?</h1>
     </div>
     <div class="flip-card-back">
       <h4><u><b>Algorithm Type:</u> Reinforcement Learning </b></h4>
@@ -169,7 +169,7 @@
 <script>
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // User is signed in 1.
+      // User is signed in.
       document.getElementById("body").style.display = "block"
       
     } else {
@@ -179,7 +179,13 @@
   }
     }
   });
+
+  trackInteraction = () => {
+    document.getElementById("questionMark").style.display = "none";
+  }
 </script>
+
+
 
   </body>
 </html>
