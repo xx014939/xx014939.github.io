@@ -186,7 +186,7 @@
   dbRef.on('value', snap => questionMark.innerText = snap.val());
 
   function userInteraction() {
-    firebase.database().ref().child("game1").set({value: "56"})
+   dbRef.set({game1: "56"})
   }
 
   userInteraction();
