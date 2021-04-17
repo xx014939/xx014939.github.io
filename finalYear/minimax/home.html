@@ -188,9 +188,12 @@
   var db = firebase.database();
 
 
-  db.ref('game/0/game1').set('?').on('value', snap => questionMark.innerText = snap.val());
-  db.ref('game/0/game2').set('?').on('value', snap => questionMark.innerText = snap.val());
-  db.ref('game/0/game3').set('?').on('value', snap => questionMark.innerText = snap.val());
+  db.ref('game/0/game1').set('?')
+  db.ref('game/0/game1').on('value', snap => questionMark.innerText = snap.val());
+  db.ref('game/0/game2').set('?');
+  db.ref('game/0/game2').on('value', snap => questionMark.innerText = snap.val());
+  db.ref('game/0/game3').set('?');
+  db.ref('game/0/game3').on('value', snap => questionMark.innerText = snap.val());
  
 
   function userInteraction() {
