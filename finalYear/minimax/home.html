@@ -197,7 +197,8 @@
  
 
   function userInteraction() {
-    db.ref('game/game1').set(' ').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('game/game1').set(' ')
+    db.ref('game/game1').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction();
