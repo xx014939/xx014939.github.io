@@ -169,27 +169,16 @@
 
 <script>
 
-  //var firstTime = new Boolean(true)
+  var firstTime = new Boolean(true);
 
   var questionMark = document.getElementById('questionMark');
   var dbRef = firebase.database().ref().child("game");
-
-  // function initialValue(){
-  // if (firstTime === true){
-  //   questionMark.innerText = "?";
-  //   questionMark2.innerText = "?";
-  //   questionMark3.innerText = "?";
-  //   }
-  // }
-
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       document.getElementById("body").style.display = "block";
-      //initialValue();
-      //firstTime = false;
-      
+ 
     } else {
       if(!user) {
         document.getElementById("body").style.display = "none"
@@ -203,6 +192,8 @@
   function userInteraction() {
    dbRef.update({game1: "Played"});
    questionMark.innerText = " ";
+   firstTime = false;
+   console.log(firstTime);
   }
 
   //userInteraction();
