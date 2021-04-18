@@ -29,7 +29,7 @@ function login(){
     db.ref().set({
       testing: "working",
       mostRecentUser : {
-        gameOne: "?",
+        gameOne: " ",
         gameTwo: "?",
         gameThree: "?"
         }
