@@ -26,9 +26,9 @@ function login(){
 
     // create a child object unique to user, inside of firebase db and assign starting values to it
     db.ref().set({
-      userEmail : {
+      [userEmail] : {
         game1: "?",
-        game1: "?",
+        game2: "?",
         game3: "?"}
       })
     // db.ref().child(userEmail + '/game1').on('value', snap => questionMark.innerText = snap.val());
