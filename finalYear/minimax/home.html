@@ -194,23 +194,22 @@
   }); 
 
   function userInteraction() {
-    console.log("This function is being called!!!")
     db.ref('mostRecentUser/0/gameOne').set(' ')
     db.ref('mostRecentUser/0/gameOne').on('value', snap => questionMark.innerText = snap.val());
   }
 
-  userInteraction();
+  //userInteraction();
 
   function userInteraction2() {
-   dbRef.update({game2: "Played"});
-   questionMark2.innerText = " ";
+    db.ref('mostRecentUser/0/gameTwo').set(' ')
+    db.ref('mostRecentUser/0/gameTwo').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction2()
 
   function userInteraction3() {
-   dbRef.update({game3: "Played"});
-   questionMark3.innerText = " ";
+    db.ref('mostRecentUser/0/gameThree').set(' ')
+    db.ref('mostRecentUser/0/gameThree').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction3()
