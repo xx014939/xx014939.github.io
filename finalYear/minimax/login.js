@@ -25,7 +25,12 @@ function login(){
     localStorage.setItem("currentUser",userEmail); // upon succesful login save current user to variable
 
     // create a child object unique to user, inside of firebase db and assign starting values to it
-    db.ref().child(userEmail).set({game1: "?"})
+    db.ref().set({
+      userEmail : {
+        game1: "?",
+        game1: "?",
+        game3: "?"}
+      })
     // db.ref().child(userEmail + '/game1').on('value', snap => questionMark.innerText = snap.val());
     // db.ref().child(userEmail + '/game2').set('?');
     // db.ref().child(userEmail + '/game2').on('value', snap => questionMark.innerText = snap.val());
