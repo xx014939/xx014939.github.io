@@ -1,14 +1,14 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in 1.
-      document.getElementById("loginDiv").style.display = "none"
-      document.getElementById("userDiv").style.display = "block"
-    } else {
-      // No user is signed in.
-      document.getElementById("loginDiv").style.display = "block"
-      document.getElementById("userDiv").style.display = "none"
-    }
-  });
+// firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       // User is signed in 1.
+//       document.getElementById("loginDiv").style.display = "none"
+//       document.getElementById("userDiv").style.display = "block"
+//     } else {
+//       // No user is signed in.
+//       document.getElementById("loginDiv").style.display = "block"
+//       document.getElementById("userDiv").style.display = "none"
+//     }
+//   });
 
 
 function login(){
