@@ -29,7 +29,7 @@ function login(){
     db.ref().set({
       userEmail : {
         game1: "?",
-        game2: "?",
+        game1: "?",
         game3: "?"}
       })
     // db.ref().child(userEmail + '/game1').on('value', snap => questionMark.innerText = snap.val());
