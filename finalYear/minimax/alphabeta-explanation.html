@@ -11,6 +11,32 @@
   </style>
 <link rel="stylesheet" type="text/css" href="stars.css" media="screen">
 <link rel="stylesheet" type="text/css" href="imageStyling.css" media="screen"/>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use1
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+ 
+ <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+<script>
+var firebaseConfig = {
+ apiKey: "AIzaSyDkaGv4jZoNfCHVCxD1j4gyPxdomeYTSkU",
+ authDomain: "web-login-fyp.firebaseapp.com",
+ projectId: "web-login-fyp",
+ storageBucket: "web-login-fyp.appspot.com",
+ messagingSenderId: "703900213638",
+ appId: "1:703900213638:web:57cb496955e8bc54e98c07",
+ measurementId: "G-3DL39KQHCL"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+
 <script src="./login.js"></script>
 <script src="./firebaseTracking.js"></script>
 <script>
