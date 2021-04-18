@@ -94,7 +94,6 @@
 
   function userInteraction() {
     db.ref('mostRecentUser/0/gameOne').set(' ')
-    db.ref('mostRecentUser/0/gameOne').on('value', snap => questionMark.innerText = snap.val());
   }
 
   userInteraction();

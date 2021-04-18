@@ -47,6 +47,7 @@
     }
   }); 
 
+  var db = firebase.database();
   db.ref('mostRecentUser/0/gameOne').on('value', snap => questionMark.innerText = snap.val());
   db.ref('mostRecentUser/0/gameTwo').on('value', snap => questionMark2.innerText = snap.val());
   db.ref('mostRecentUser/0/gameThree').on('value', snap => questionMark3.innerText = snap.val());
