@@ -174,22 +174,14 @@
   var questionMark3 = document.getElementById('questionMark3');
   var db = firebase.database();
 
-
-  if (localStorage['firstSession'] === 'true'){
-    db.ref('game/game1').set('?')
-    db.ref('game/game1').on('value', snap => questionMark.innerText = snap.val());
-    db.ref('game/game2').set('?');
-    db.ref('game/game2').on('value', snap => questionMark.innerText = snap.val());
-    db.ref('game/game3').set('?');
-    db.ref('game/game3').on('value', snap => questionMark.innerText = snap.val());
-  }
+  var user = localStorage.getItem("currentUser"); // retrieve current user variable set inside of login.js
  
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       document.getElementById("body").style.display = "block";
-      localStorage['firstSession'] = 'false';
+      
  
     } else {
       if(!user) {
@@ -200,8 +192,8 @@
   }); 
 
   function userInteraction() {
-    db.ref('game/game1').set(' ')
-    db.ref('game/game1').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('game/' + user + '/game1').set(' ')
+    db.ref('game/' + user + '/game1').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction();

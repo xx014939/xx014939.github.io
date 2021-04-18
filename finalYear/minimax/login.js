@@ -15,12 +15,22 @@ function login(){
 
     var userEmail = document.getElementById("email-field").value;
     var userPassword = document.getElementById("password-field").value;
+    var db = firebase.database();
 
 
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    localStorage.setItem("currentUser",user); // upon succesful login save current user to variable
+
+    // create a child object unique to user, inside of firebase db and assign starting values to it
+    db.ref('game/' + user + '/game1').set('?')
+    db.ref('game/' + user + '/game1').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('game/' + user + '/game2').set('?');
+    db.ref('game/' + user + '/game2').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('game/' + user + '/game3').set('?');
+    db.ref('game/' + user + '/game3').on('value', snap => questionMark.innerText = snap.val());
     window.location.href = "https://xx014939.github.io/finalYear/minimax/home";
     // ...
   })
