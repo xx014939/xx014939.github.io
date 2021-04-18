@@ -27,11 +27,11 @@ function login(){
 
     // create a child object unique to user, inside of firebase db and assign starting values to it
     db.ref().set({
-      mostRecentUser : {
+      mostRecentUser : [{
         gameOne: "?",
         gameTwo: "?",
         gameThree: "?"
-        }
+      }]
       });
     // db.ref().child(userEmail + '/game1').on('value', snap => questionMark.innerText = snap.val());
     // db.ref().child(userEmail + '/game2').set('?');

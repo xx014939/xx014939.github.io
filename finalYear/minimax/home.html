@@ -193,9 +193,9 @@
   }); 
 
   function userInteraction() {
-    console.log("This function is being called!!")
-    db.ref('web-login-fyp-default-rtdb/mostRecentUser/gameOne').update(' ')
-    //db.ref('mostRecentUser/gameOne').on('value', snap => questionMark.innerText = snap.val());
+    console.log("This function is being called!!!")
+    db.ref('mostRecentUser/0/gameOne').set(' ')
+    db.ref('mostRecentUser/0/gameOne').on('value', snap => questionMark.innerText = snap.val());
   }
 
   userInteraction();
