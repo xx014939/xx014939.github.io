@@ -47,12 +47,8 @@
     }
   }); 
 
-  var db = firebase.database();
-  db.ref('mostRecentUser/0/gameOne').on('value', snap => questionMark.innerText = snap.val());
-  db.ref('mostRecentUser/0/gameTwo').on('value', snap => questionMark2.innerText = snap.val());
-  db.ref('mostRecentUser/0/gameThree').on('value', snap => questionMark3.innerText = snap.val());
-
 </script>
+<script src="./login.js"></script>
 
 
     <style>
@@ -106,7 +102,7 @@
             <p>Original Minimax algorithm, implemented on a game of tic tac toe<br>     </p>
           <div class="container">
             <div >
-              <a href="minimax-explanation.html"><button onclick="userInteraction()" class="buttonHome">Find Out More</button></a>
+              <a href="minimax-explanation.html"><button class="buttonHome">Find Out More</button></a>
             </div>
         </div>
       </div>
@@ -124,7 +120,7 @@
         <p>This is an improvement upon the original Minimax algorithm. Alpha Beta pruning is used to reduce computation time.</p>
       <div class="container">
         <div >
-          <a href="alphabeta-explanation.html"><button class="buttonHome" onclick="userInteraction2()">Find Out More</button></a>
+          <a href="alphabeta-explanation.html"><button class="buttonHome">Find Out More</button></a>
          </div>
 
       </div>
@@ -142,7 +138,7 @@
         <p>Reinforcement learning tic tac toe game with user interaction </p>
       <div class="container">
         <div >
-          <a href="deeplearning-explanation.html"><button class="buttonHome" onclick="userInteraction3()">Find Out More</button></a>
+          <a href="deeplearning-explanation.html"><button class="buttonHome">Find Out More</button></a>
          </div>
         </div>
       </div>
@@ -155,7 +151,6 @@
 </p>
 
 <div class="connect4Container" >
-
   <div class="container">
     <div class="card2">
       <div class="face face1">
@@ -186,16 +181,11 @@
       </div>
    </div>
   </div>
-  
-
-  
-
 </div>
 
-
-
-
-
-
   </body>
+
+  <footer>
+    <button id="logoutButton" class="buttonHome" style="margin-bottom: 20px;">LOGOUT</button>
+  </footer>
 </html>
