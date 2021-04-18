@@ -22,22 +22,24 @@ function login(){
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-    localStorage.setItem("currentUser",userEmail); // upon succesful login save current user to variable
+    //localStorage.setItem("currentUser",userEmail); // upon succesful login save current user to variable
 
 
     // create a child object unique to user, inside of firebase db and assign starting values to it
     db.ref().set({
-      userEmail : {
-        game1: "?",
-        game1: "?",
-        game3: "?"}
-      })
+      testing: "working",
+      mostRecentUser : {
+        gameOne: "?",
+        gameTwo: "?",
+        gameThree: "?"
+        }
+      });
     // db.ref().child(userEmail + '/game1').on('value', snap => questionMark.innerText = snap.val());
     // db.ref().child(userEmail + '/game2').set('?');
     // db.ref().child(userEmail + '/game2').on('value', snap => questionMark.innerText = snap.val());
     // db.ref().child(userEmail + '/game3').set('?');
     // db.ref().child(userEmail + '/game3').on('value', snap => questionMark.innerText = snap.val());
-    window.location.href = "https://xx014939.github.io/finalYear/minimax/home";
+    //window.location.href = "https://xx014939.github.io/finalYear/minimax/home";
     // ...
   })
   .catch((error) => {
