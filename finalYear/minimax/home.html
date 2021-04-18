@@ -198,7 +198,7 @@
     db.ref('mostRecentUser/gameOne').on('value', snap => questionMark.innerText = snap.val());
   }
 
-  //userInteraction();
+  userInteraction();
 
   function userInteraction2() {
    dbRef.update({game2: "Played"});
