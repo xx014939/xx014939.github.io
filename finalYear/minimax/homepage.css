@@ -67,7 +67,7 @@
 
   @media screen and (max-width: 769px) {
     .flip-card, .flip-card-inner, .flip-card-front, .flip-card-back {
-      margin-bottom: 280px;
+      margin-bottom: 30px;
     }
   }
   
