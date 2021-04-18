@@ -193,8 +193,8 @@
   }); 
 
   function userInteraction() {
-    db.ref('currentUser/game1').set(' ')
-    db.ref('currentUser/game1').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('userEmail/game1').set(' ')
+    db.ref('userEmail/game1').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction();

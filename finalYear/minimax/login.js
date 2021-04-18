@@ -27,7 +27,7 @@ function login(){
 
     // create a child object unique to user, inside of firebase db and assign starting values to it
     db.ref().set({
-      currentUser : {
+      userEmail : {
         game1: "?",
         game2: "?",
         game3: "?"}
