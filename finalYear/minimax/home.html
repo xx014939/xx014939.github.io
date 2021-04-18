@@ -182,6 +182,7 @@
       // User is signed in.
       document.getElementById("body").style.display = "block";
       
+      
  
     } else {
       if(!user) {
@@ -192,8 +193,8 @@
   }); 
 
   function userInteraction() {
-    db.ref('game/' + user + '/game1').set(' ')
-    db.ref('game/' + user + '/game1').on('value', snap => questionMark.innerText = snap.val());
+    db.ref('currentUser/game1').set(' ')
+    db.ref('currentUser/game1').on('value', snap => questionMark.innerText = snap.val());
   }
 
   //userInteraction();

@@ -24,10 +24,10 @@ function login(){
     var user = userCredential.user;
     localStorage.setItem("currentUser",userEmail); // upon succesful login save current user to variable
 
-    var key = toString(userEmail);
+
     // create a child object unique to user, inside of firebase db and assign starting values to it
     db.ref().set({
-      [key] : {
+      currentUser : {
         game1: "?",
         game2: "?",
         game3: "?"}
