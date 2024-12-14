@@ -34,6 +34,8 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
 
     if (qaRequired === "yes") {
       const qaBufferDays = 2; // Assume QA takes 2 additional days
+      const qaBufferHours = Math.ceil(adjustedEstimateHours * 0.2); // QA takes 20% of dev hours
+
       let qaCompletionDate = new Date(completionDate);
       let remainingQaDays = qaBufferDays;
 
@@ -48,7 +50,9 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
       const qaFormattedDate = `${qaCompletionDate.getDate().toString().padStart(2, '0')}/${(qaCompletionDate.getMonth() + 1).toString().padStart(2, '0')}/${qaCompletionDate.getFullYear()}`;
 
       return {
-        hoursEstimate: adjustedEstimateHours,
+        devHoursEstimate: adjustedEstimateHours,
+        qaHoursEstimate: qaBufferHours,
+        totalHoursEstimate: adjustedEstimateHours + qaBufferHours,
         daysEstimate: adjustedEstimateDays,
         completionDate: formattedDate,
         qaCompletionDate: qaFormattedDate
@@ -56,7 +60,9 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
     }
 
     return {
-      hoursEstimate: adjustedEstimateHours,
+      devHoursEstimate: adjustedEstimateHours,
+      qaHoursEstimate: 0,
+      totalHoursEstimate: adjustedEstimateHours,
       daysEstimate: adjustedEstimateDays,
       completionDate: formattedDate
     };
@@ -79,7 +85,9 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
     if (qaRequired === "yes") {
       document.getElementById("result").innerHTML = `
         <strong>Results:</strong><br>
-        Estimated Hours: ${result.hoursEstimate}<br>
+        Developer Estimated Hours: ${result.devHoursEstimate}<br>
+        QA Estimated Hours: ${result.qaHoursEstimate}<br>
+        Total Estimated Hours: ${result.totalHoursEstimate}<br>
         Estimated Days: ${result.daysEstimate}<br>
         Completion Date: ${result.completionDate}<br>
         QA Completion Date: ${result.qaCompletionDate}
@@ -87,7 +95,8 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
     } else {
       document.getElementById("result").innerHTML = `
         <strong>Results:</strong><br>
-        Estimated Hours: ${result.hoursEstimate}<br>
+        Developer Estimated Hours: ${result.devHoursEstimate}<br>
+        Total Estimated Hours: ${result.totalHoursEstimate}<br>
         Estimated Days: ${result.daysEstimate}<br>
         Completion Date: ${result.completionDate}
       `;
