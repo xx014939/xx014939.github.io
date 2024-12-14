@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Ecommerce Estimate Calculator</title>
+  <title>CE Estimate Calculator</title>
 </head>
 <body>
   <div class="calculator">
@@ -34,6 +34,13 @@
     <div class="form-group">
       <label for="devEstimateDays">Developer Estimated Days</label>
       <input type="number" id="devEstimateDays" placeholder="Enter days" />
+    </div>
+    <div class="form-group">
+      <label for="qaRequired">Send to QA?</label>
+      <select id="qaRequired">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
     </div>
     <button id="calculateButton">Calculate</button>
     <div class="result" id="result"></div>

@@ -1,30 +1,4 @@
-console.log('JS is working!')
-
-// Calculate work estimate for clients
-
-// VARIABLES
-
-// Task complexity, dev reliability, dev estimate, current date, current time
-
-// FORMULA
-
-/*
-
-Take dev estimate and add a buffer to it
-
-The buffer should be greater if the task is more compelx and/or the dev is unreliable
-
-The buffer should be less if the task is less complex and/or the dev is reliable
-
-We should return both an hours estimate and a date of completion estimate
-
-The date of completion estimate should factor in that we do not expect work to be done on weekends
-
-*/
-
-// Completion Estimate Calculator
-
-function calculateCompletionEstimate(taskComplexity, devReliability, devEstimateHours, devEstimateDays) {
+function calculateCompletionEstimate(taskComplexity, devReliability, devEstimateHours, devEstimateDays, qaRequired) {
     const currentDate = new Date();
     let bufferMultiplier;
 
@@ -58,6 +32,29 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
 
     const formattedDate = `${completionDate.getDate().toString().padStart(2, '0')}/${(completionDate.getMonth() + 1).toString().padStart(2, '0')}/${completionDate.getFullYear()}`;
 
+    if (qaRequired === "yes") {
+      const qaBufferDays = 2; // Assume QA takes 2 additional days
+      let qaCompletionDate = new Date(completionDate);
+      let remainingQaDays = qaBufferDays;
+
+      while (remainingQaDays > 0) {
+        qaCompletionDate.setDate(qaCompletionDate.getDate() + 1);
+        const dayOfWeek = qaCompletionDate.getDay();
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+          remainingQaDays -= 1;
+        }
+      }
+
+      const qaFormattedDate = `${qaCompletionDate.getDate().toString().padStart(2, '0')}/${(qaCompletionDate.getMonth() + 1).toString().padStart(2, '0')}/${qaCompletionDate.getFullYear()}`;
+
+      return {
+        hoursEstimate: adjustedEstimateHours,
+        daysEstimate: adjustedEstimateDays,
+        completionDate: formattedDate,
+        qaCompletionDate: qaFormattedDate
+      };
+    }
+
     return {
       hoursEstimate: adjustedEstimateHours,
       daysEstimate: adjustedEstimateDays,
@@ -70,19 +67,29 @@ function calculateCompletionEstimate(taskComplexity, devReliability, devEstimate
     const devReliability = document.getElementById("devReliability").value;
     const devEstimateHours = parseFloat(document.getElementById("devEstimateHours").value);
     const devEstimateDays = parseFloat(document.getElementById("devEstimateDays").value);
+    const qaRequired = document.getElementById("qaRequired").value;
 
     if (isNaN(devEstimateHours) || isNaN(devEstimateDays)) {
       document.getElementById("result").innerText = "Please enter valid numbers for hours and days.";
       return;
     }
 
-    const result = calculateCompletionEstimate(taskComplexity, devReliability, devEstimateHours, devEstimateDays);
+    const result = calculateCompletionEstimate(taskComplexity, devReliability, devEstimateHours, devEstimateDays, qaRequired);
 
-    document.getElementById("result").innerHTML = `
-      <strong>Results:</strong><br>
-      Estimated Hours: ${result.hoursEstimate}<br>
-      Estimated Days: ${result.daysEstimate}<br>
-      Completion Date: ${result.completionDate}
-    `;
+    if (qaRequired === "yes") {
+      document.getElementById("result").innerHTML = `
+        <strong>Results:</strong><br>
+        Estimated Hours: ${result.hoursEstimate}<br>
+        Estimated Days: ${result.daysEstimate}<br>
+        Completion Date: ${result.completionDate}<br>
+        QA Completion Date: ${result.qaCompletionDate}
+      `;
+    } else {
+      document.getElementById("result").innerHTML = `
+        <strong>Results:</strong><br>
+        Estimated Hours: ${result.hoursEstimate}<br>
+        Estimated Days: ${result.daysEstimate}<br>
+        Completion Date: ${result.completionDate}
+      `;
+    }
   });
-
