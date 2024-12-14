@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="ce.css">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Ecommerce Estimate Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <h2 style="text-align: center;">CE Estimate Calculator</h2>
+    <div class="form-group">
+      <label for="taskComplexity">Task Complexity</label>
+      <select id="taskComplexity">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="devReliability">Developer Reliability</label>
+      <select id="devReliability">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="devEstimateHours">Developer Estimated Hours</label>
+      <input type="number" id="devEstimateHours" placeholder="Enter hours" />
+    </div>
+    <div class="form-group">
+      <label for="devEstimateDays">Developer Estimated Days</label>
+      <input type="number" id="devEstimateDays" placeholder="Enter days" />
+    </div>
+    <button id="calculateButton">Calculate</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="/ce.js"></script>
